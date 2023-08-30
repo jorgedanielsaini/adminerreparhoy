@@ -339,7 +339,7 @@ function linkErreparHoy(){
 }
 
 async function obtenerNovedadesApi() {
-    const response = await fetch("http://127.0.0.1:8000/api/novedades/");
+    const response = await fetch("https://django-admin-ereports.onrender.com/api/novedades/");
     const data = await response.json();
     importarNovedades2(data)
 }
