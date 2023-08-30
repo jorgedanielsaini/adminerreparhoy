@@ -1,0 +1,45 @@
+
+body{
+	background-color: #212529;
+	color: aliceblue;
+}
+
+.cool-form {
+	background-color: transparent;
+	color: white;
+	border: 1px solid #ddd;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+}
+
+.cool-form label {
+	font-weight: bold;
+}
+
+.cool-form input[type="text"],
+.cool-form input[type="text"],
+.cool-form input[type="date"],
+.cool-form input[type="number"],
+.cool-form input[type="url"],
+.cool-form textarea,
+.cool-form select {
+	background-color: #212529;
+	color: white;
+	border: 1px solid #9b93933d;
+	border-radius: 4px;
+	padding: 8px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.cool-form select {
+	appearance: none;
+	background-color: #222;
+}
+
+.cool-form button {
+	margin-top: 10px;
+	margin-right: 10px;
+}
+

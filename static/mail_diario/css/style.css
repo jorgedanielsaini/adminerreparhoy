@@ -1,0 +1,85 @@
+.e-reports, .admnin, .vencimientos {
+    margin: 1%;
+    padding: 1%;
+    max-width: 600px;
+    background-color: #ffffff;
+    font-size: 15px;
+    margin-left: 27%;
+    
+}
+
+.e-reports div, .admnin div{
+    padding: 0.5%;
+    
+}
+
+#vtos-fechas{
+    display: flex;
+}
+
+
+button {
+    padding: 1%;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.labelFigma {font-family: url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Roboto&display=swap');
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top:20px;
+    margin-bottom:5px;
+    color: #263057;
+}
+
+.inputFigma {
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #24378F;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 0.5%;
+    
+}
+
+.textareaFigma{
+    background: #FFFFFF;
+    border: 1px solid #24378F;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 0.5%;
+    width: 100%;
+
+}
+
+#seccion {
+    width: 89%;
+}
+
+#titulo {
+    width: 92%;
+}
+
+#link{
+    width: 70%;
+}
+
+#link-btn{
+    width: 20%;
+}
+
+#imagen-destacada{
+    width: 76%;
+}
+
+.herramientas {
+    margin-top: 1%;
+}
+
+.herramientas button {
+    margin-left: 1%;
+}

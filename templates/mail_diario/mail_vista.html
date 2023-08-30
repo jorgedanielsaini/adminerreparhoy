@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es" style="font-size: 10pt; ">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Errepar Hoy</title>
+        <!--VINCULAR CSS DE LA CARPETA STATIC-->
+	    <link rel="stylesheet" href="{% static "./mail_diario/css/style.css" %}?v=1.3" />
+        <style type="text/css">
+            @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+            body{
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, Arial, sans-serif;}
+        </style>
+    </head>  
+  
+    <body style="background-color: #eeeeee;" onload="agregarFecha()">
+        
+        <!--ADMIN-->
+        <div class="e-reports" hidden>
+            <form method="dialog">
+                <div>
+                    <label for="impuestos" class="labelFigma">Impuestos</label>
+                    <input type="text" class="inputFigma" id="impuestos">
+                </div>
+
+                <div>
+                    <label for="laboral" class="labelFigma">Laboral</label>
+                    <input type="text" class="inputFigma" id="laboral">
+                </div>
+
+                <div>
+                    <label for="sociedades" class="labelFigma">Sociedades</label>
+                    <input type="text" class="inputFigma" id="sociedades">
+                </div>
+
+                <div>
+                    <label for="contabilidad" class="labelFigma">Contabilidad</label>
+                    <input type="text" class="inputFigma" id="contabilidad">
+                </div>
+
+                <div>
+                    <label for="cordoba" class="labelFigma">Córdoba</label>
+                    <input type="text" class="inputFigma" id="cordoba">
+                </div>
+
+                <div>
+                    <label for="bsas" class="labelFigma">Buenos Aires</label>
+                    <input type="text" class="inputFigma" id="bsas">
+                </div>
+
+                <div>
+                    <label for="staFe" class="labelFigma">Santa Fe</label>
+                    <input type="text" class="inputFigma" id="staFe">
+                </div>
+
+                <div>
+                    <button onclick="guardarErreports()">Guardar</button>
+                </div>
+            </form>
+        </div>
+
+          
+        <!--ENCAABEZADO-->
+
+        <table width="600" align="center" style="text-align: center; background-color: #ffffff; margin: auto; font-size: 13px; border-collapse: collapse;">
+            <tbody>
+                <tr> 
+                    <td colspan="2" style="background-color: #eeeeee; color: #939495; text-align: justify; font-size: 0.9rem; padding: 0%;"> 
+                      <p align="center" style="font-size: 11px; padding: 5px; ">&nbsp;</p></td>
+                  </tr>
+
+                <tr> 
+                    <td colspan="2"> 
+                        <p class="fecha" style="color: #202b3e; font-size: 15px; margin:1%; padding: 0%; "></p>
+                    </td>
+                </tr>
+                
+                <tr> 
+                    <td colspan="2"> 
+                        <img style="max-width: 600px; margin: 0%; padding: 0%;" src="https://old.errepar.com/mkt/2022/pbl/header-errepar-hoy-2022.png"> 
+                    </td>
+                </tr>
+                
+                <tr> 
+                    <td id ="linksEreports" width="80%" style="border-bottom: 1px solid grey;  padding: 4%; "> <p align="left" style="font-size: 15px;        
+                        margin: 1%; color: #202b3e;"> <strong> Ver todas las novedades del día</strong><br><br>
+
+                        <span id="link-impuestos"></span> 
+                        <span id="link-laboral"></span> 
+                        <span id="link-sociedades"></span> 
+                        <span id="link-contabilidad"></span>
+                        <br>
+                        <br>
+                        <span id="link-cordoba"></span> 
+                        <span id="link-bsas"></span> 
+                        <span id="link-staFe"></span> 
+                        <div id="herramientasMail"><button onclick="editarEreport()">Editar</button></div>
+                    </td>
+
+                    <td width="20%" style="border-bottom:1px solid grey">
+                    
+                            <img src="https://old.errepar.com/mkt/2022/pbl/btns-errepar-hoy-2022.png" border="0" usemap="#Map2" style="padding:4%">
+                        </a> 
+                    </td>
+                </tr>
+
+               <!--CONTENIDO-->
+               
+
+
+                <tr id="pie"> 
+                    <!--PIE DE PÁGINA-->
+                    <td colspan="2"> <img src="https://old.errepar.com/mkt/2022/pbl/footer-errepar-hoy-2022.png" border="0" width="600" height="306" orgWidth="600" orgHeight="306" usemap="#mapfooter"/></td>
+                </tr>
+
+                <tr> 
+                    <td colspan="2" style="background-color: #eeeeee; color: #939495; text-align: justify; font-size: 0.9rem; padding: 0%;"> 
+                        <p style="font-size: 11px; padding: 5px; ">
+                            Toda la información, contenidos, diagramas, formatos y demás obrantes en este boletín son de plena y exclusiva propiedad de Errepar, y está prohibida su reproducción total o parcial, su reenvío, su adaptación, traducción o cualquier otro tipo de uso sin la autorización expresa y por escrito de Errepar SA. Si tenés alguna duda sobre el alcance de cualquier acto para realizar con dicha información, previamente, tendrás que efectuar la consulta escrita correspondiente a Errepar SA, en cuyo caso el silencio a la misma será considerado siempre como inclusivo del acto consultado en la prohibición aquí dispuesta.
+                        </p>
+                    </td>
+                </tr>
+                <tr> 
+                    <td colspan="2" style="background-color: #eeeeee; color: #939495; text-align: justify; font-size: 0.9rem; padding: 0%;"> 
+                      <p align="center" style="font-size: 11px; padding: 5px; ">Si quer&eacute;s 
+                        dejar de recibir este e-mail comunicate con nuestro Centro de Atenci&oacute;n 
+                        al Cliente:<br>
+                        (011) 4370-2002 / +54 9 11 5936-6406 / <a href="mailto:clientes@errepar.com">clientes@errepar.com</a></p></td>
+                  </tr>
+                              </tr>
+                              <tr> 
+                                <td colspan="2" style="background-color: #eeeeee; color: #939495; text-align: justify; font-size: 0.9rem; padding: 0%;"> 
+                                  <p align="center" style="font-size: 11px; padding: 5px; ">Si no podés visualizar correctamente este e-mail, hace clic <a target="_blank" id="linkErreparHoy" href="https://old.errepar.com/mkt/2022/pbl/ErreparHoy_19-8_web.html"> 
+                                  acá</a></p></td>
+                              </tr>
+            </tbody>
+        </table>
+        
+               
+        <map name="mapfooter">
+            <area  alt="Sintesis Semanal" href="https://www.youtube.com/playlist?list=PLtocfnN6m96P4e2ugCLirmnQXmb-e0Akj" shape="rect" coords="111,18,217,37" style="outline:none;" target="_blank"     />
+            <area  alt="Capacitaciones" href="https://www.errepar.com/capacitaciones" shape="rect" coords="235,20,334,34" style="outline:none;" target="_blank"     />
+            <area  alt="Calendario Interactivo"  href="https://mi.errepar.com/CalendarioInteractivo" shape="rect" coords="353,19,487,33" style="outline:none;" target="_blank"     />
+            <area  alt="Errepar"  href="https://www.errepar.com/" shape="rect" coords="261,231,366,251" style="outline:none;" target="_blank"     />
+            <area  alt="Correo"  href="mailto:clientes@errepar.com" shape="rect" coords="384,190,523,210" style="outline:none;" target="_blank"     />
+            <area  alt="WhatsApp"  href="https://api.whatsapp.com/send?phone=1159366406" shape="rect" coords="238,190,355,206" style="outline:none;" target="_blank"     />
+            
+            <area  alt="Logo Mail" title="" href="mailto:clientes@errepar.com" shape="poly" coords="451,160,447,161,444,163,442,166,441,170,442,174,444,177,447,179,451,180,455,179,458,177,460,174,461,170,460,166,458,163,455,161" style="outline:none;" target="_blank"     />
+            <area  alt="Logo WhatsApp" title="" href="https://api.whatsapp.com/send?phone=1159366406" shape="poly" coords="291,158,287,159,284,161,282,164,281,168,282,172,284,175,287,177,291,178,295,177,298,175,300,172,301,168,300,164,298,161,295,159" style="outline:none;" target="_blank"     />
+        </map>
+
+          
+        <map name="Map2">
+            <area shape="rect" coords="0,0,116,34" href="https://comunidaderrepar.com.ar/landing" target="_blank">
+            <area shape="rect" coords="1,42,114,81" href="https://www.errepar.com/podcast" target="_blank">
+            <area shape="rect" coords="1,87,138,135" href="https://www.errepar.com/boletin-oficial" target="_blank">
+        </map>
+
+        <div class="admnin">
+            <button onclick="window.location.href='{% url 'admin:mail_diario_novedades_changelist' %}'">ADMIN</button>
+            <button onclick="terminar()" id="btn-terminar">Terminar</button>            
+        </div>
+        
+        <script src="{% static './mail_diario/js/app.js' %}?v=1.1"></script>
+    </body>
+</html>

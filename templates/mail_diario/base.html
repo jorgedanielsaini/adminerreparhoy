@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--LOAD ESTATIC SE DEBE PONER SIEMPRE QUE SE DESEE AGREGAR ARCHIVOS STATICOS (CSS, JS, IMAGENES)-->
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--BOOTSTRAP-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+	<!--VINCULAR CSS DE LA CARPETA STATIC-->
+	<link rel="stylesheet" href="{% static "./mail_diario/css/estilos.css" %}?v=1.0" />
+	
+	<title>Errepar hoy</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{% url 'inicio' %}">
+				<img src="https://portalracore.errepar.com/img/ReestructuracionAgendas/LogoErreparBlanco.png" alt="Bootstrap" width="auto" height="24">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'mail_vista' %}">Tapa del día</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Gestión
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="{% url 'admin:mail_diario_novedades_changelist' %}">Tapa del día</a></li>
+							<li><a class="dropdown-item" href="{% url 'admin:ereports_ereportnovedad_changelist' %}">E-report</a></li>							
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						E-reports
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Impuestos</a></li>
+							<li><a class="dropdown-item" href="{% url 'e_laboral' %}">Laboral</a></li>
+							<li><a class="dropdown-item" href="#">Sociedades</a></li>
+							<li><a class="dropdown-item" href="#">Contabilidad</a></li>
+							<li><a class="dropdown-item" href="#">Buenos Aires</a></li>
+							<li><a class="dropdown-item" href="#">Córdoba</a></li>
+							<li><a class="dropdown-item" href="#">Santa Fe</a></li>
+							<li><a class="dropdown-item" href="#">Liquidación de sueldos</a></li>
+							<li><a class="dropdown-item" href="#">Rural</a></li>
+						</ul>
+					</li>
+				</ul>			
+		  	</div>
+		</div>
+	</nav>
+
+	<!-- main -->
+	
+	{% block main %}
+	
+	{% endblock main %}
+	
+		
+	<!--BOOTSTRAP-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

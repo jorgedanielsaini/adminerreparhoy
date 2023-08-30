@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmar importación</title>
+</head>
+<body>
+    <h1>Confirmar importación de novedades</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="confirmacion">¿Estás seguro de que deseas importar novedades?</label>
+        <input type="submit" name="confirmacion" value="SI">
+        <input type="submit" name="confirmacion" value="NO">
+    </form>
+</body>
+</html>
