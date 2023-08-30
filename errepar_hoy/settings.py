@@ -147,7 +147,7 @@ STATICFILES_DIRS = [
 #crear y django ira a buscar ahi 
 #python manage.py collectstatic
 #STATIC_ROOT = BASE_DIR / 'static_root'
-if not DEBUG:
+if 'RENDER' in os.environ:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
